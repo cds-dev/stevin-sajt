@@ -1,0 +1,576 @@
+/* Deklaracija globalnih varijabli */
+:root {
+    --gray: #363a3f;
+    --yellow: #e0c970;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.first {
+    height: 100vh;
+    background-color: var(--gray);
+}
+
+.second,
+.third,
+.forth {
+    display: none;
+}
+
+/*generalno namestanje carosela po stranama */
+
+div.row {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #363a3f;
+    z-index: 200;
+    box-sizing: border-box;
+}
+
+a.carousel-fixed {
+    position: fixed;
+    padding: auto 5vw;
+}
+
+/* kontakt strana */
+
+div.contactPage {
+  height: 100vh;
+  background-color: #363a3f;
+  font-size: 1em;
+}
+
+div.contactPage>img {
+  width: 100%;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+.steva-foto {
+   padding-top: 10vh;
+}
+
+div.contactPage p {
+  color: white;
+  text-align: center;
+  padding-top: 8vh;
+  text-decoration: none;
+  margin: 10vh 2vw 0;
+}
+
+div.contactPage ul {
+  list-style-type: none;
+  margin-top: 1vh;
+  text-align: center;
+  color: white;
+  padding: 0;
+}
+
+div.contactPage ul li span {
+  color: var(--yellow);
+  text-align: center;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 1024px) {
+    
+    div.contactPage p {
+        margin: 0 2vw 0;
+        padding-top: 2vh;    
+    }
+    div.contactPage>img {
+        width: 45%;
+    }
+
+    .steva-foto {
+        padding-top: 0;
+    }    
+}
+
+@media only screen and (min-width: 1440px) {
+    
+    div.contactPage p {
+        font-size: 1.4em;
+    }
+
+    div.contactPage ul {
+        font-size: 1.4em;
+    }    
+}
+
+/*krstic za zatvaranje*/
+
+a.times {
+    position: fixed;
+    left: 50%;
+    bottom: 5vh;
+    z-index: 200;
+}
+
+a.times i {
+    color: #fff;
+    font-size: 3em;
+    font-weight: bold;
+    vertical-align: middle;
+    position: relative;
+    left: -50%;
+}
+
+@media only screen and (min-width: 1024px) {
+    .first {
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+/* Main navigation */
+  
+nav {
+    background-color: white;
+}
+  
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 4vh;
+}
+  
+nav ul li {
+    list-style: none;
+}
+  
+nav a {
+    text-decoration: none;
+    color: black;
+}
+  
+.dot {
+    display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+    nav {
+        width: 150px;
+        background-color: transparent;
+        position: absolute;
+        top: 2.5vh;
+        right: 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: unset;
+        padding: 0;
+        height: auto;
+    }
+    
+    nav ul li{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        left: 60px;
+        transition: .6s;
+        padding: 2.5vh 0;
+    }
+
+    nav ul li span {
+        display: inline-block;
+        width: 40%;
+    }
+    
+    nav a {
+        color: white;
+    }
+    
+    nav ul li:hover {
+        left: -10px;
+    }
+    
+    .dot {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        border-radius: 100%;
+        background-color: #fff;
+        /* margin-bottom: -5px; */
+    }
+}
+
+/* 3.14vajz linija i strelica */
+  
+.whiteInTheMiddle {
+    background-color: white;
+    top: 50%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 999;
+    height: 30px;
+}
+  
+.pictureCvajz {
+    height: 54px;
+    z-index: 9999;
+    position: fixed;
+    overflow: visible;
+}
+  
+.chevron {
+    display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+    
+    section.first .chevron {
+        position: fixed;
+        bottom: 1.5vh;
+        display: inline;
+        text-align: center;
+        left: 50%;
+        z-index: 9999;
+    }
+    
+    section.first .chevron i {
+        color: #fff;
+        font-size: 3em;
+        vertical-align: middle;
+        position: relative;
+        left: -50%;
+    }
+    
+    .whiteInTheMiddle {
+        position: fixed;
+    }
+}
+
+
+/* Second Section */
+
+@media only screen and (min-width: 1024px) {
+    .second {
+        background-image: url('../imgvideos/cover.jpg');
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(28, 1fr);
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .namesurname {
+        grid-column: 5/10;
+        grid-row: 6/8;
+        background-color: var(--gray);
+        font-size: 2.5vw;
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+        color: #fff;
+        z-index: 800;
+        text-align: center;
+        align-self: stretch;
+        align-items: center;
+        font-family: 'BenchNine', sans-serif;
+        letter-spacing: 5px;
+    }
+    
+    .textbase {
+        background-color: var(--gray);
+        grid-column: 2/12;
+        grid-row: 10/-4;
+        z-index: 200;
+        float: none;
+        align-self: stretch;
+    }
+    
+    .text {
+        grid-column: 7/11;
+        grid-row: 14/27;
+        font-size: 1em;
+        text-align: justify;
+        z-index: 300;
+        color: var(--yellow);
+        font-family: 'BenchNine', sans-serif;
+        font-weight: 700;
+    }
+
+    .text p {
+        margin-bottom: 1em;
+    }
+    
+    .stevaimage {
+        grid-column: 3/6;
+        grid-row: span 20 / -6;
+        z-index: 600;
+        position: relative;
+    }
+    
+    .stevaimage img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .text {
+        font-size: 1.2em;
+    }
+}
+
+/* Third Section */
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+    .third {
+        display: block;
+        height: 100vh;
+        background-color: var(--gray);
+    }
+    
+    .video {
+        height: 80vh;
+        background-color: var(--gray);
+        padding: 3em;
+    }
+    
+    div.press {
+        height: 20vh;
+        padding-bottom: 20vh;
+        background-color: var(--gray); 
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+    }
+    
+    a.button {
+        padding: 20px;
+        display: inline-block;
+        background-color: var(--yellow);
+        color: var(--gray);
+        border-radius: 25px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+}
+
+/* Forth Section */
+
+@media only screen and (min-width: 1024px) {
+    .forth {
+        display: block;
+        height: 100vh;
+        background-color: var(--yellow);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Gallery */
+
+    .gallery {
+        height: 50%;
+    }
+
+    .sub_menu {
+        height: 100%;
+        background-size: cover;
+        transition: .6s;
+        float: left;
+        width: 25%;
+        position: relative;
+        background-repeat: no-repeat;
+    }
+
+    .logo {
+        background-image: url('../imgvideos/logo.jpg');
+    }
+    
+    .poster {
+        background-image: url('../imgvideos/poster.jpg');
+    }
+
+    .arh {
+        background-image: url('../imgvideos/arh.jpg');
+    }
+
+    .sketches {
+        background-image: url('../imgvideos/sketches.jpg');
+    }
+
+    .sub_menu:hover {
+        transform: scale(1.2) translate(25px, 25px); 
+        background-size: 100%;
+        z-index: 30;
+    }
+
+    .sub_menu_container {
+        position: absolute;
+    }
+
+    .logo .sub_menu_container {
+        bottom: 80%;
+        left: 23%;
+    }
+
+    .poster .sub_menu_container {
+        bottom: 20%;
+        left: 27%;
+    }
+
+    .arh .sub_menu_container {
+        top: 25%;
+        left: 25%;
+    }
+
+    .sketches .sub_menu_container {
+        bottom: 40%;
+        left: 40%;
+    }
+
+    .spot {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        border-radius: 100%;
+        background-color: #fff;
+    }
+
+    .sub_menu_container a {
+        display: none;
+        text-decoration: none;
+        color: #FAE64D;
+        font-size: 30px; 
+    }
+
+    .sub_menu_container:hover .spot {
+        display: none;
+        z-index: 200;
+    }
+
+    .sub_menu_container:hover a {
+        display: inline-block;
+    }
+
+    .overlay {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .6);
+        transition: .6s;
+    }
+
+    .sub_menu:hover .overlay {
+        background-color: rgba(0, 0, 0, 0);
+        z-index: 9999;
+    }
+
+    /* Contact */
+
+    .contact {
+        font-size: 2.5em;
+        line-height: 1.3em;
+        height: 50%;
+        color: #363a3f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    .contact span {
+        color: white;
+        display: inline-block;
+    }
+}
+
+/* Video Page */
+
+.videoprivate {
+    height: 100vh;
+    background-color: var(--gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10vh 20px;
+}
+
+.videoprivate h2 {
+  color: #fff;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.video-content {
+    margin-top: 20vh;
+    width: 100%;
+    height: 40vh;
+    text-align: center;
+}
+
+@media only screen and (min-width: 1024px) {
+    .videoprivate {
+        justify-content: center;
+        align-items: center;
+        padding: 10vh 0;
+    }
+
+    .video-content {
+        flex-basis: 100%;
+        width: 70%;
+        margin-top: none;
+    }
+
+    .videoprivate h2 {
+        flex-basis: auto;
+        font-size: 2em;
+        padding-bottom: 1rem;
+    }
+
+    .video-content iframe {
+        position: static;
+}
+
+@media only screen and (min-width: 1440px) {
+    .videoprivate {
+        padding: 10vh 0 15vh 0;
+    }
+
+    .videoprivate h2 {
+        padding-bottom: 2rem;
+    }
+}
+
+/* Sketches Page */
+
+@media only screen and (min-width: 1024px) {
+    img-height{
+        height: 100vh;
+    }
+}
